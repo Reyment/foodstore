@@ -19,13 +19,13 @@ async function store(req, res, next) {
         }
 
         if (payload.tags && payload.tags.length > 0) {
-            let tags = await Tag.find({_id: {$in: payload.tags}});
+            let tags = await Tag.find({_id: {$in: payload.tags.split(",")}});
 
-            if (tags && tags.length > 0) {
-                payload = {...payload, tags: tags.map((tag) => tag._id)};
-            } else {
-                delete payload.tags;
-            }
+                if (tags && tags.length > 0) {
+                    payload = {...payload, tags: tags.map((tag) => tag._id)};
+                } else {
+                    delete payload.tags;
+                }
         }
 
         if (req.file) {
@@ -211,17 +211,34 @@ async function index(req, res, next) {
     }
 
     try {
-        let product = await Product.find(criteria)
+        let product = [];
+        let count = [];
+        if (q.length > 0 || category.length > 0 || tags.length > 0) {
+            product = await Product.find(criteria)
             .skip(Number(skip))
             .limit(Number(limit))
             .sort("-updatedAt")
             .populate("category")
             .populate("tags");
-        let count = await Product.find(criteria)
+            count = await Product.find(criteria)
+                .sort("-updatedAt")
+                .populate("category")
+                .populate("tags")
+                .countDocuments();
+        } else {
+            product = await Product.find()
+            .skip(Number(skip))
+            .limit(Number(limit))
             .sort("-updatedAt")
             .populate("category")
-            .populate("tags")
-            .countDocuments();
+            .populate("tags");
+            count = await Product.find()
+                .sort("-updatedAt")
+                .populate("category")
+                .populate("tags")
+                .countDocuments();
+        }
+        
 
         return res.json({
             data: product,
