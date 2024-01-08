@@ -19,7 +19,7 @@ async function store(req, res, next) {
         }
 
         if (payload.tags && payload.tags.length > 0) {
-            let tags = await Tag.find({_id: {$in: payload.tags.split(",")}});
+            let tags = await Tag.find({_id: {$in: payload.tags}});
 
             if (tags && tags.length > 0) {
                 payload = {...payload, tags: tags.map((tag) => tag._id)};
