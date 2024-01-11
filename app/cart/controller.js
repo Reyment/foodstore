@@ -33,13 +33,13 @@ const update = async (req, res, next) => {
       })
     );
 
-    return res.json(cartitems);
+    return res.status(200).json(cartitems);
   } catch (err) {
     if (err && err.name === "ValidationError") {
-      return res.json({
+      return res.status(404).json({
         error: 1,
-        massage: err.message,
-        fields: err.errors,
+        message: err.message,
+        fields: err.code,
       });
     }
     next(err);

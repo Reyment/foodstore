@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 //   `mongodb+srv://${dbUser}:${dbPass}@foodstore.3kqbupj.mongodb.net/${dbName}?retryWrites=true&w=majority`
 // );
 
-mongoose.connect('mongodb://127.0.0.1:27017/api_pos', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://127.0.0.1:27017/food_store', { useNewUrlParser: true, useUnifiedTopology: true });
 // mongoose.connect('mongodb+srv://mnyabdulghani:sfJ25vvM9uiY3UbJ@cluster0.k2a2zcq.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;

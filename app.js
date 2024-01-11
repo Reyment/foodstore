@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
 const {decodeToken} = require("./middlewares/middleware");
-// router
+// router 
 const productRouter = require("./app/product/router");
 const categoryRouter = require("./app/category/router");
 const tagRouter = require("./app/tag/router");
@@ -31,9 +31,9 @@ app.use(decodeToken());
 
 app.use(
     "/static",
-    express.static(path.join(__dirname, "public/images/products"))
+    express.static(path.join(__dirname, "public/images/products")) 
 );
-
+     
 app.use("/auth", authRouter);
 app.use("/api/invoice", invoiceRouter);
 app.use("/api/order", orderRouter);
