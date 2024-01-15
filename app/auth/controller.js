@@ -38,21 +38,49 @@ async function localStrategy(email, password, done) {
   done();
 }
 
+// async function login(req, res, next) {
+//   passport.authenticate("local", async function (err, user) {
+//     if (err) return next(err);
+
+//     if (!user) return res.json({ error: 1, message: "email or password incorrect!" });
+
+//     let signed = jwt.sign(user, config.secretKey);
+
+//     await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
+
+//     return res.json({
+//       message: "Login succesfully",
+//       user,
+//       token: signed,
+//     });
+//   })(req, res, next);
+// }
+
 async function login(req, res, next) {
   passport.authenticate("local", async function (err, user) {
-    if (err) return next(err);
+    if (err) {
+      return res.status(500).json({ error: 1, message: "Internal Server Error" });
+    }
 
-    if (!user) return res.json({ error: 1, message: "email or password incorrect!" });
+    if (!user) {
+      return res.status(401).json({ error: 1, message: "Email or password incorrect!" });
+    }
 
-    let signed = jwt.sign(user, config.secretKey);
+    try {
+      const expiresIn = 3600; // 1 hour in seconds
+      let signed = jwt.sign(user, config.secretKey, { expiresIn });
 
-    await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
+      await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
 
-    return res.json({
-      message: "Login succesfully",
-      user,
-      token: signed,
-    });
+      return res.json({
+        message: "Login successfully",
+        user,
+        token: signed,
+        expiresIn, 
+      });
+    } catch (error) {
+      return res.status(500).json({ error: 1, message: "Internal Server Error" });
+    }
   })(req, res, next);
 }
 
