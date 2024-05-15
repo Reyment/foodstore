@@ -47,3 +47,14 @@ Ensure you have the following installed on your machine:
 1. **Clone the Repository**: Clone the repository from GitHub using the following command:
    ```bash
    git clone https://github.com/Reyment/InnovateHub.git
+
+2. Navigate to the Project Directory: Change directory to your cloned project:
+   ```bash
+   git cd InnovateHub
+
+2. Install Backend Dependencies: Navigate to the backend directory and install the required dependencies:
+   ```bash
+   cd backend
+   npm install
+
+   
