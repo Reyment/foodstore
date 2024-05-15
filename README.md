@@ -1,5 +1,5 @@
 
-# InnovateHub Landing Page
+# Food Store App
 
 Welcome to My Awesome Landing Page! This landing page showcases the amazing features of our product.
 
