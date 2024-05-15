@@ -52,9 +52,34 @@ Ensure you have the following installed on your machine:
    ```bash
    git cd InnovateHub
 
-2. Install Backend Dependencies: Navigate to the backend directory and install the required dependencies:
+3. Install Backend Dependencies: Navigate to the backend directory and install the required dependencies:
    ```bash
    cd backend
    npm install
+
+4. Set Up Environment Variables: Create a .env file in the backend directory and add the following environment variables:
+   ```bash
+   MONGO_URI=your_mongodb_connection_string
+   PORT=5000
+
+5. Run the Backend Server: Start the backend server:
+      ```bash
+   npm start
+      
+6. Install Frontend Dependencies: Navigate to the frontend directory and install the required dependencies:
+      ```bash
+   cd ../frontend
+   npm install
+
+7. Run the Frontend Server: Start the frontend server:
+      ```bash
+         ```bash
+   npm start
+
+8. Open in Browser: Open your browser and go to http://localhost:3000 to view the application.
+   
+   
+
+
 
    
