@@ -11,11 +11,8 @@ Our landing page is designed to provide visitors with an enticing introduction t
 
 - **User-Friendly Interface**: Navigate effortlessly through our intuitive and modern design.
 - **Wide Variety of Products**: Access a vast selection of food items from different categories.
-- **Secure Payments**: Enjoy safe and secure payment options.
 - **Order Tracking**: Stay updated with real-time order tracking.
-- **Personalized Recommendations**: Get food suggestions tailored to your preferences.
 - **Discounts and Offers**: Avail exciting discounts and special offers regularly.
-- **Customer Reviews**: Read reviews from other customers to make informed decisions.
 - **Easy Checkout**: Experience a smooth and fast checkout process.
 - **Delivery Options**: Choose from various delivery options to suit your schedule.
 
@@ -79,7 +76,18 @@ Ensure you have the following installed on your machine:
 8. Open in Browser: Open your browser and go to http://localhost:3000 to view the application.
    
    
+## Contributing
 
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
+
+## Feedback
+
+I'd love to hear your feedback! If you have any questions, suggestions, or concerns, please feel free to reach out to us.
+
+
+---
+
+[View Live Demo](https://example-convert-figma-html-1.vercel.app/)
 
 
    
