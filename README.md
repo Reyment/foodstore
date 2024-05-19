@@ -65,12 +65,11 @@ Ensure you have the following installed on your machine:
       
 6. Install Frontend Dependencies: Navigate to the frontend directory and install the required dependencies:
       ```bash
-   cd ../frontend
+   cd ../clients
    npm install
 
 7. Run the Frontend Server: Start the frontend server:
-      ```bash
-         ```bash
+     ```bash
    npm start
 
 8. Open in Browser: Open your browser and go to http://localhost:3000 to view the application.
