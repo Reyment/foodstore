@@ -51,7 +51,6 @@ Ensure you have the following installed on your machine:
 
 3. Install Backend Dependencies: Navigate to the backend directory and install the required dependencies:
    ```bash
-   cd backend
    npm install
 
 4. Set Up Environment Variables: Create a .env file in the backend directory and add the following environment variables:
@@ -65,7 +64,7 @@ Ensure you have the following installed on your machine:
       
 6. Install Frontend Dependencies: Navigate to the frontend directory and install the required dependencies:
       ```bash
-   cd ../clients
+   cd ../client
    npm install
 
 7. Run the Frontend Server: Start the frontend server:
